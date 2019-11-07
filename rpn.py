@@ -7,14 +7,14 @@ operators = {
         '-': operator.sub,
         '*': operator.mul,
         '/': operator.floordiv
-        }
+  }
 
-def calculate(arg):
+def calculate(myarg):
     stack = list()
-    for token in arg.split():
+    for token in myarg.split():
         try:
             value = int(token)
-            stack.append(value)
+            stack.append(token)
         except ValueError:
             function = operators[token]
             arg2 = stack.pop()
@@ -22,9 +22,9 @@ def calculate(arg):
             result = function(arg1, arg2)
             stack.append(result)
        
-       # print(stack)
+        print(stack)
     if len(stack) != 1:
-        raise TypeError('malformed input')
+        raise TypeError('Too many parameters')
     return stack.pop()
 
 def main():
