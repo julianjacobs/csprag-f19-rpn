@@ -1,1 +1,2 @@
-.test_rpn.py.swp
+*.pyc
+__pycache__
